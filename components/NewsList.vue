@@ -21,29 +21,27 @@
   </v-layout>
 </template>
 <script>
-import axios from "axios";
-import { mapMutations, mapState, mapActions } from "vuex";
+import { mapMutations, mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   created() {
-    this.getNews();
+    //async
+    this.$store.dispatch('news/getNews');
   },
   computed: {
     data() {
-      return this.$store.state.news.data;
+      return this.$store.getters.data;
     },
     isLoading() {
-      return this.$store.state.news.isLoading;
-    }
+      return this.$store.getters.isLoading;
+    },
+    ...mapGetters({
+      data: "news/data",
+      isLoading: "news/isLoading"
+    })
   },
   methods: {
-    async getNews() {
-      const data = await axios.get(
-        "https://newsapi.org/v2/everything?q=bitcoin&from=2019-04-09&sortBy=publishedAt&apiKey=b757618966584c1ca5605a5498f9a179"
-      );
-      this.$store.commit("news/setNews", data.data.articles);
-      this.$store.commit("news/setLoadState", false);
-    }
+    
   }
 };
 </script>
