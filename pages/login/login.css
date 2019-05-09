@@ -1,0 +1,41 @@
+.title {
+  font-size: 30;
+  color: teal;
+  font-weight: bold;
+}
+.forget {
+  color: red;
+  font-size: 11px;
+}
+.link {
+  margin-top: 40;
+  margin-bottom: 40;
+  text-decoration: none;
+}
+.horizontal-line {
+  color: lightgray;
+}
+.sk {
+  color: grey;
+  font-size: 11px;
+}
+
+
+/* .not-registered-text {
+  color: grey;
+  font-size: 12;
+  background: #fff;
+  position: "absolute";
+  margin-bottom: 20px;
+} */
+.not-register {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid grey;
+  line-height: 0.1em;
+  margin: 20px 0 20px;
+}
+.not-register span {
+  background: #fafbfc;
+  padding: 0 10px;
+}
