@@ -15,9 +15,6 @@ import { mapMutations, mapState, mapActions } from "vuex";
 
 export default {
   layout: "logged_in",
-  customFunct(){
-
-  },
   computed: {
     todos() {
       return this.$store.state.todos.list;
@@ -30,9 +27,6 @@ export default {
     },
     ...mapMutations({
       toggle: "todos/toggle"
-    }),
-    ...mapActions({
-      toggle: "todos/geth"
     })
   }
 };
