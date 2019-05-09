@@ -42,7 +42,7 @@
         </nuxt-link>
         <nuxt-link class="link" to="/chat">
           <v-btn color="teal" flat value="chat">
-            <span>Chat</span>
+            <span>News</span>
             <v-icon>chat</v-icon>
           </v-btn>
         </nuxt-link>
