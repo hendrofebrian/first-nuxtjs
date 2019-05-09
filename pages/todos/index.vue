@@ -9,10 +9,8 @@
     </li>
   </ul>
 </template>
-
 <script>
 import { mapMutations, mapState, mapActions } from "vuex";
-
 export default {
   layout: "logged_in",
   computed: {
