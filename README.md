@@ -1,6 +1,6 @@
 # first-nuxt-js
 
-> My praiseworthy Nuxt.js project
+> Deployed to Heroku: https://first-nuxtjs.herokuapp.com/
 
 ## Build Setup
 
