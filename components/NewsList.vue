@@ -22,24 +22,27 @@
 </template>
 <script>
 import axios from "axios";
+import { mapMutations, mapState, mapActions } from "vuex";
+
 export default {
-  data: function() {
-    return {
-      isLoading: true,
-      data: []
-    };
-  },
-  beforeMount() {
+  created() {
     this.getNews();
+  },
+  computed: {
+    data() {
+      return this.$store.state.news.data;
+    },
+    isLoading() {
+      return this.$store.state.news.isLoading;
+    }
   },
   methods: {
     async getNews() {
       const data = await axios.get(
         "https://newsapi.org/v2/everything?q=bitcoin&from=2019-04-09&sortBy=publishedAt&apiKey=b757618966584c1ca5605a5498f9a179"
       );
-      this.isLoading = false;
-      this.data = data.data.articles;
-      console.log(this.data);
+      this.$store.commit("news/setNews", data.data.articles);
+      this.$store.commit("news/setLoadState", false);
     }
   }
 };
